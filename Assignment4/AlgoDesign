@@ -1,0 +1,109 @@
+5.33
+Go through the array once, and hash out all the values in the array. Iterating the values as you go through. Should be O(N).
+
+5.7
+O(N^2), because its essentially O(N^2) + O(N) which is O(N^2).
+
+5.8
+Its just what ever the max of the O(N) and O(binary search)
+
+5.14 
+for linear
+	x*100 = 0.5 => x=.005 for 500 500*0.005 = 2.5
+for NlogN solve the equation
+
+5.20
+O(N)
+O(N)
+O(N^2)
+O(N)
+O(N^3)
+O(logN)
+5.33
+Go through the array once, and hash out all the values in the array. Iterating the values as you go through. Should be O(N).
+
+5.7
+O(N^2), because its essentially O(N^2) + O(N) which is O(N^2).
+
+5.8
+Its just what ever the max of the O(N) and O(binary search)
+
+5.14 
+for linear
+	x*100 = 0.5 => x=.005 for 500 500*0.005 = 2.5
+for NlogN solve the equation
+
+5.20
+O(N)
+O(N)
+O(N^2)
+O(N)
+O(N^3)
+O(logN)
+5.33
+Go through the array once, and hash out all the values in the array. Iterating the values as you go through. Should be O(N).
+
+5.7
+O(N^2), because its essentially O(N^2) + O(N) which is O(N^2).
+
+5.8
+Its just what ever the max of the O(N) and O(binary search)
+
+5.14 
+for linear
+	x*100 = 0.5 => x=.005 for 500 500*0.005 = 2.5
+for NlogN solve the equation
+
+5.20
+O(N)
+O(N)
+O(N^2)
+O(N)
+O(N^3)
+O(logN)
+5.33
+Go through the array once, and hash out all the values in the array. Iterating the values as you go through. Should be O(N).
+
+5.7
+O(N^2), because its essentially O(N^2) + O(N) which is O(N^2).
+
+5.8
+Its just what ever the max of the O(N) and O(binary search)
+
+5.14 
+for linear
+	x*100 = 0.5 => x=.005 for 500 500*0.005 = 2.5
+for NlogN solve the equation
+
+5.20
+O(N)
+O(N)
+O(N^2)
+O(N)
+O(N^3)
+O(logN)
+5.33
+Go through the array once, and hash out all the values in the array. Iterating the values as you go through. Should be O(N).
+
+5.7
+O(N^2), because its essentially O(N^2) + O(N) which is O(N^2).
+
+5.8
+Its just what ever the max of the O(N) and O(binary search)
+
+5.14 
+for linear
+	x*100 = 0.5 => x=.005 for 500 500*0.005 = 2.5
+for NlogN solve the equation
+
+5.20
+O(N)
+O(N)
+O(N^2)
+O(N)
+O(N^3)
+O(logN)
+
+
+Program
+As you load the numbers put then him a map. Iterate the value of the key if it already exists otherwise set it to one.

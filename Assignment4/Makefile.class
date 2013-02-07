@@ -1,0 +1,9 @@
+majorityElement: main.o
+	g++ -o majorityElement main.o
+
+main.o: main.cpp
+	g++ -Wall -O0 -g -c main.cpp -o main.o
+
+clean:
+	rm -rf *.o
+	rm -rf majorityElement
