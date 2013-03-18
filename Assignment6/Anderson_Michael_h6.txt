@@ -1,0 +1,43 @@
+1)
+	a)	input: IntStack of class IntegerStack
+		output: top = top element of the stack
+		if IntStack.isEmpty()
+			return null
+	 	int n = IntStack.pop()
+		IntStack.push(n)
+		return n
+
+	b) 	input: IntStack of class IntegerStack
+		output: max
+		function UnstackStack(IntStack)
+			IntegerStack mixer
+			if !IntStack.isEmpty()
+				int max = IntStack.pop()
+				StackVec.push(max)
+			else
+				return null
+			while !IntStack.isEmpty()
+				int temp = IntStack.pop()
+				if temp > max
+					max = temp
+				mixer.push(temp)
+
+			while (!mixer.isEmpty) 
+				IntStack.push(mixer.pop())
+			return max
+
+2)
+	By induction:
+	Suppose there are no full nodes, then the root node is not full and none of its descendents are full then it has only one leaf.
+
+	Suppose that there is one full node, then the full node is either the root or another node.
+	Case 1) the full node is root. This implies that the roots two children's descendents have no full nodes and if you consider these two sub trees as trees with no full nodes then there are two leaves.
+	Case 2) the full node is not root then the root's one child is an ancestor of the full node and all edges lead to the full node. You can then consider on the tree starting at the full node, it is then just case 1.
+
+	Assume that the every tree with k full nodes has k+1 leaves. Now consider the tree with k+1 full nodes. This tree with k+1 full nodes is just one of the trees with k full nodes but one of the previously non-free nodes is now full. Consider the tree which starts at the node which we are filling. 
+	Case 1) The root node is the one that is filled. Thus we trivially add just one leave and there are (k+1)+1 leaves.
+	Case 2) This sub tree T is not the full tree and thus it has n < k full nodes and n+1 leaves. Thus n+1 full nodes gives n+1+1 leaves. Thus the full tree without the sub tree that is filled has k+1-(n+1) and once you fill a node on T and add it back into the original tree you have k+1-(n+1)+(n+1+1) = k+1+1 and the proof is finished. 
+
+3) Inorder travesal G D H B I E L J M A C F K
+   Preorder traversal A B D G H E I J L M C F K
+   Postorder traversal G H D I L M J E B K F C A
