@@ -1,0 +1,14 @@
+CPPFLAGS = -Wall -g -I.
+
+all: lucas
+clean:
+	rm -f Lucas.o lucas main.o
+
+lucas: Lucas.o main.o
+	g++ -o lucas Lucas.o main.o
+
+Lucas.o: 
+	g++ -o Lucas.o -c Lucas.cpp
+
+main.o:
+	g++ -o main.o -c main.cpp
