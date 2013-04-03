@@ -24,14 +24,7 @@ int main(int argc, char** argv) {
     BinaryTree<int> t6;
     
     t2.merge(2, t1, t3);
-    cout << "----------------\n";
-    cout << "t2 after merge of 1 and 3\n";
-    t2.printInOrder();
-    cout << "t2 size:" << t2.size() << "\n";
-    cout << "t2 height:" << t2.height() << "\n";
     t6.merge(6, t5, t7);        
-    cout << "----------------\n";
-    cout << "t6 after merge of 5 and 7\n";
     t4.merge(4, t2, t6);
     
     cout << "t4 should be perfect 1-7; t2 empty\n";
@@ -39,9 +32,9 @@ int main(int argc, char** argv) {
     cout << "t4\n";
     t4.printInOrder();
     cout << "---------------\n";
-    cout << "t2";
+    cout << "t2\n";
     t2.printInOrder();
-    cout << "----------------\n";
+    cout << "---------------\n";
     cout << "t4 size: " << t4.size( ) << "\n";
     cout << "t4 height: " << t4.height( ) << "\n";
     
