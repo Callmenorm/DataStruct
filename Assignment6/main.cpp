@@ -23,14 +23,24 @@ int main(int argc, char** argv) {
     BinaryTree<int> t4;
     BinaryTree<int> t6;
     
-    t2.merge(2, t2, t3);
-    t4.merge(6, t5, t7);
-    t6.merge(4, t2, t6);
+    t2.merge(2, t1, t3);
+    cout << "----------------\n";
+    cout << "t2 after merge of 1 and 3\n";
+    t2.printInOrder();
+    cout << "t2 size:" << t2.size() << "\n";
+    cout << "t2 height:" << t2.height() << "\n";
+    t6.merge(6, t5, t7);        
+    cout << "----------------\n";
+    cout << "t6 after merge of 5 and 7\n";
+    t4.merge(4, t2, t6);
     
     cout << "t4 should be perfect 1-7; t2 empty\n";
     cout << "----------------\n";
     cout << "t4\n";
     t4.printInOrder();
+    cout << "---------------\n";
+    cout << "t2";
+    t2.printInOrder();
     cout << "----------------\n";
     cout << "t4 size: " << t4.size( ) << "\n";
     cout << "t4 height: " << t4.height( ) << "\n";
