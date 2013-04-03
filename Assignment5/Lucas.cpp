@@ -18,7 +18,7 @@ Lucas::Lucas(const Lucas& orig) {
 Lucas::~Lucas() {
 }
 
-int Lucas::findLucas(const int N, const int current){
+int Lucas::findLucas(const unsigned int N, const int current){
     if(Lucas::LucasHolder.size() > (N + 1))
         return Lucas::LucasHolder[N];
     

@@ -15,7 +15,7 @@ public:
     Lucas(const Lucas& orig);
     virtual ~Lucas();
     
-    int findLucas(int N, int current);
+    int findLucas(const unsigned int N, const int current);
     int output(int lucas, int N);
     static std::vector<int> LucasHolder;
 

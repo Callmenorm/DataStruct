@@ -29,14 +29,14 @@ int main(int argc, char** argv) {
     int n = atoi(argv[1]);
     int output;
     
-    cout << "0 " << Lucas::LucasHolder[0] << "\n";
+    //cout << "0 " << Lucas::LucasHolder[0] << "\n";
     
     if( abs(n) >= 1 )
         output = lucas.findLucas(abs(n),2);
     else
         output = Lucas::LucasHolder[abs(n)];
     
-    cout << lucas.output(output, n) << "\n";
+    cout << "Lucas(" << n << "): " << lucas.output(output, n) << ".\n";
     
     
 

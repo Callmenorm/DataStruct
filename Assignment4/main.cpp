@@ -19,6 +19,7 @@ using namespace std;
 int main(int argc, char** argv) {
     map<string, int> counts;
     int moreThanHalf;
+    int max = 0;
     string element;
     string majElem;
     moreThanHalf = (argc-1)/2 + 1;
@@ -30,19 +31,16 @@ int main(int argc, char** argv) {
         if(ret.second == false){
             ++ret.first->second;
         }
-    }
-    map<string, int>::iterator it;
-    it = counts.begin();
-    int max = 0;
-    while(it != counts.end()){
-        if(it->second > max && it->second >=moreThanHalf){
-            majElem = it->first;
-            max = it->second;
+        if(ret.first->second > max && ret.first->second >=moreThanHalf){
+            max = ret.first->second;
+	    majElem = ret.first->first;
+            break;
         }
-        ++it;
     }
-    
-    cout << majElem << " : " << max << endl;
+    if(majElem != "")
+        cout << "The majority element is " << majElem << "."<< endl;
+    else
+        cout << "There is no majority element." << endl;
     return 0;
 }
 
