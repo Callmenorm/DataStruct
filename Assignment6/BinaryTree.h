@@ -32,7 +32,8 @@ class BinaryNode
 
     static int size( BinaryNode *t );
     static int height( const BinaryNode *t );
-    static int averageHeight( BinaryNode *t, std::vector<int> &heights, bool clear );
+    static int findDepth(const BinaryNode *t );
+    static int depth( BinaryNode *t, std::vector<int> &heights, bool clear );
 
     void printPreOrder( ) const;
     void printPostOrder( ) const;
@@ -43,6 +44,7 @@ class BinaryNode
 
   public:   // To keep things simple
     Object      element;
+    BinaryNode *parent;
     BinaryNode *left;
     BinaryNode *right;
 };
@@ -51,8 +53,12 @@ class BinaryNode
 template <class Object>
 BinaryNode<Object>::BinaryNode( const Object & theElement,
                                 BinaryNode *lt, BinaryNode *rt )
-  : element( theElement ), left( lt ), right( rt )
-{ 
+  : element( theElement ), parent( 0), left( lt ), right( rt )
+{
+    if(left != NULL) 
+      left->parent = this;
+    if(right != NULL)
+      right->parent = this;
 }
 
 // Return size of tree rooted at t.
@@ -81,28 +87,45 @@ int BinaryNode<Object>::height(const BinaryNode<Object> * t )
         return -1;
     else{
         int node_height = 1 + max( height( t->left ), height( t->right ) );
-        //std::cout << "node_height is: " << node_height << "\n";
+        //std::cout << "node_height for " << t->element << " is: " 
+        //          << node_height << "\n";
         return node_height;
     }
 }
 
+// Return depth of node t, how many edges is it from the root
+template <class Object>
+int BinaryNode<Object>::findDepth(const BinaryNode<Object> * t )
+{
+    int depth = 0;
+    const BinaryNode<Object> *node = t;
+    if( t == NULL )
+        return -1;
+    else
+        while(node->parent != NULL){
+            ++depth;
+            node = node->parent;
+        }
+    //std::cout << "The depth of element " << t->element << " is " << depth << ".\n";
+    return depth;
+}
+
 // Return the average height of tree rooted at t.
 template < class Object>
-int BinaryNode<Object>::averageHeight( BinaryNode<Object> * t, std::vector<int> & heights, bool clear)
+int BinaryNode<Object>::depth( BinaryNode<Object> * t, std::vector<int> & depths, bool clear)
 {
     if(clear == true){
-        heights.clear();
+        depths.clear();
         clear = false;
     }
     
-    if( t == NULL)
+    if( t == NULL )
         return -1;
     else{
-        int node_height = 1 + max( averageHeight( t->left, heights, clear ), averageHeight( t->right, heights, clear ) );
-        heights.push_back(node_height);
-        return node_height;
+        depths.push_back( BinaryNode<Object>::findDepth( t ) );
+        return depth( t->left, depths, clear ) + 
+               depth( t->right, depths, clear );
     }
-    
 }
 
 #undef max
@@ -169,6 +192,7 @@ BinaryNode<Object> * BinaryNode<Object>::duplicate( ) const
         root->left = left->duplicate( );   // Duplicate; attach
     if( right != NULL )           // If there's a right subtree
         root->right = right->duplicate( ); // Duplicate; attach
+    root->parent = NULL;
 
     return root;                     // Return resulting tree
 }
@@ -233,7 +257,7 @@ class BinaryTree
     int height( ) const
       { return Node::height( root ); }
     double averageHeight( ){
-      Node::averageHeight( root, heights, true ); 
+      Node::depth( root, heights, true ); 
       
       int height_sum = 0;
       for(unsigned int i = 0; i < heights.size(); ++i){
