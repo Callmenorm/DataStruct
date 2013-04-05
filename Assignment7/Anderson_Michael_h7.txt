@@ -1,0 +1,25 @@
+1.                      5
+					/		\
+				1				20
+							/		\
+							18			37
+						/			/		\
+					16			22				47
+				/		\							\
+			9				17							90
+				\
+					13
+				/
+			12
+
+
+
+
+
+3. Go through all the nodes but stop travering any sub tree where the root is less than the lower bound or greater than the upper bound. Once you've gone through the tree then sort the array with the help algorithm.
+
+
+
+
+
+
