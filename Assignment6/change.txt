@@ -1,0 +1,25 @@
+They initially had the class declarations in BinaryTree.h and the templates in BinaryTree.cpp. They then included BinaryTree.cpp in BinaryTree.h. Removed the code from BinaryTree.cpp and put it in BinaryTree.cpp. 
+
+I created three functions in BinaryNode class.
+
+depth  a static function that recursively calls itself on a nodes children while calling findDepth on itself to put in a vector
+	The vector supplied to depth will be used later to calculate the average tree height.
+
+findDepth is a static function that depth uses to count the number of edges between a node and the root. Its used to calculate average height
+
+printInOrderWithIndentation takes the height of the tree and then tabs in for every edge that is traversed from the root
+
+I added an element to BinaryNode parent points to a nodes parent. I also had to add set parent = 0 in the contructors. In the merge code I had to set the new node as the parent of the merged nodes.
+
+I created two functions to BinaryTree class
+
+printInOrderWithIndentation
+This function calculates the height of the tree and then supplies the height as the parameter to the root node's printInOrderWithIndentation function
+
+averageHeight
+This function calculates depth of each node in the tree with rooted at the BinaryTree's root.
+It then adds up all the heights in the vector and divides them by the size of the vector to get the average height.
+
+I added one element to BinaryTree
+
+heights is a vector that is used to store heights of nodes for average height calculation.
